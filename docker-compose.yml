@@ -1,0 +1,14 @@
+services:
+  dragooning:
+    container_name: dragooning
+    image: ghcr.io/favware/dragooning:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: no
+    ports:
+      - "8080:80"
+    logging:
+      options:
+        max-size: "1g"
+        max-file: "3"
